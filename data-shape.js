@@ -4,12 +4,12 @@ Table:
 
 {
   _id: ObjectId,
-  rid: ObjectId -> Restaurant,
-  orders: [Order,]
+  rid: ObjectId -> Restaurant
 }
 
 Order: {
   _id: ObjectId,
+  tid: ObjectId,
   iid: ObjectId -> Item,
   created_at: Date,
   billed_at: Date,
@@ -19,6 +19,7 @@ Order: {
 
 Item: {
   _id: ObjectId,
+  rid: ObjectId,
   name: String,
   price: Float
 }
